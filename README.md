@@ -162,7 +162,7 @@ pip install -r requirements.txt
 
 - 유니티 내부에서 해당 챗봇에게 질문을 하면, 질문에 대한 답변을 해줍니다. 
 
-Requset
+Request
 ```
 { "question' : "티라노의 먹이는?" }
 ```
