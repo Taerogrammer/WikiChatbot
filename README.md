@@ -69,7 +69,7 @@ Flask
 ### Prerequisites
 
 ```sh
-prerequistes 작성
+pip install -r requirements.txt
 ```
 
 <br>
