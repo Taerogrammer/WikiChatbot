@@ -32,7 +32,7 @@
 </p>
 
 <p align="center">
-:::: Chatbot Game 이미지 넣기 ::::
+
 </p>
 
 <br>
@@ -43,16 +43,15 @@
 
 | Python |
 | :--------: |
-|   Python Button   |
-
-::::   아니면 좀 다른 형식의 버튼 구해보기   ::::
 
 <br>
 <br>
 <br>
 
 ## Framework
-Flask
+Flask / AWS EC2
+
+(Python 버전은 3.8을 사용하였습니다.)
 
 <br>
 <br>
@@ -127,7 +126,7 @@ pip install -r requirements.txt
 - dataset : KorQuAD v 1.0과 AiHub의 질의응답 데이터셋을 이용하였습니다.
 
 - model : 위에 언급된 dataset을 훈련시켜 만들었습니다. (epoch : 4, batch size : 32) <br>         
-        만약 custom한 모델을 이용해보고 싶다면 result_v2 파일에 model을 추가하시면 됩니다. 
+        만약 custom한 모델을 이용해보고 싶다면 result_v2 파일에 개인 model을 추가하시면 됩니다. 
 
 
 <br>
@@ -173,7 +172,9 @@ Response
 { "answer" : "조각류, 갑각류" }
 ```
 
+- 예시
 
+![unityWiki](https://user-images.githubusercontent.com/104834390/209521725-4b2b6580-1801-4eec-8b68-1bc1b66f0071.png)
 
 
 ### /answer_2 [POST]
@@ -183,3 +184,11 @@ Response
 - 질문을 작성하고 request를 보내주면 answer, 정답에 대한 tensor값(정수), 정답을 찾아온 위키피디아 페이지와 정답에 대한 하이라이트 페이지를 불러옵니다.
 
 - AWS ubuntu 22.04 LTS 버전을 사용하였습니다.
+
+- 데모 사이트
+
+![wikibot](https://user-images.githubusercontent.com/104834390/209521405-b427c031-974b-425b-ab5e-d77197b71890.png)
+
+- 참조 위키피디아 페이지
+
+![wikipage](https://user-images.githubusercontent.com/104834390/209521457-244198ea-c5fb-41e2-a6ce-5e1b70da7490.png)
