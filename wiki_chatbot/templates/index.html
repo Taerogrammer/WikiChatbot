@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="./static/mystyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>WIKI QA</title>
+</head>
+
+    <h1>WIKI QA</h1>
+    
+    <from action="\post" method="post">
+    Question : <textarea rows="1000" cols="500" value="init" name="question" id="question" style="width: 360px; height: 70px;" ></textarea>    <input type="button" value="질문하기" onclick="funct()">         
+    </from>
+    <br><br><br>
+    <form>
+	    <h5>정답</h5>
+	    <div id="answer_generate"></div>
+	    <div id="tensor"></div>
+    </form>
+    <br><br>
+    <h1>Context</h1>
+    <br>
+    <div>
+   	 <a id="wiki_url">참조 URL<br></a>
+	 <br>
+	 <br>
+    </div>
+    <form>
+	    <div id='wiki_context'></div>
+    </form>
+    <script type="text/javascript" src="./static/funct.js"></script>
+</body>
+</html>
