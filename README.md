@@ -210,9 +210,12 @@ python run_korquad.py --model_type hanbert --model_name_or_path aihub/ --output_
 
 만약 모델을 학습시킬 수 없는 환경이라면 해당 드라이브에서 모델을 다운받을 수 있습니다.
 
-다운을 받은 후 output_dir의 경로를 맞춰주시면 정상적으로 작동함을 알 수 있습니다.
+다운을 받은 후 output_dir의 경로를 맞춰주시면 정상적으로 작동합니다.
 
-:::: [모델 다운로드] 모델 링크 걸어놓기 ::::
+[result_v2](https://drive.google.com/drive/folders/141HRRoc-jPj7oVBz5GrZeg9MwYVybvTA?usp=sharing)
+
+<br>
+epoch 4, batch size : 32로 학습을 진행하였습니다.
 
 <br>
 <br>
