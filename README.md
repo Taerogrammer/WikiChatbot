@@ -203,7 +203,8 @@ python run_korquad.py --model_type hanbert --model_name_or_path aihub/ --output_
 <br>
 epoch 4, batch size : 32로 학습을 진행하였습니다.
 
-pytorch_model.bin 파일을 다운받으시면 되나, 만약 이 파일만을 다운받고 실행했을 때 오류가 난다면 나머지 파일도 받아주십시오.
+파일을 다운받고, 앞에서 보이는 디렉토리 위치에 저장하면 정상적으로 실행됩니다.
+
 <br>
 <br>
 <br>
@@ -265,3 +266,20 @@ Response
 - 참조 위키피디아 페이지
 
 ![wikipage](https://user-images.githubusercontent.com/104834390/209521457-244198ea-c5fb-41e2-a6ce-5e1b70da7490.png)
+
+<br>
+<br>
+<br>
+
+## Reference
+
+- [BERT](https://arxiv.org/abs/1810.04805)
+
+- [BERT Github](https://github.com/google-research/bert)
+
+- [korean-question-answer-system](https://github.com/JoungheeKim/korean-question-answer-system)
+
+- [KorQuAD Dataset](https://korquad.github.io/KorQuad%201.0/)
+
+- [Ai Hub Dataset](https://aihub.or.kr/)
+
