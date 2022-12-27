@@ -81,45 +81,31 @@ pip install -r requirements.txt
 ## 파일 구조
 
 
-📦wiki_chatbot
-
- ┣ 📂dataset
- 
- ┃ ┣ 📜KorQuAD_v1.0_dev.json
- 
- ┃ ┣ 📜KorQuAD_v1.0_train.json
- 
- ┃ ┗ 📜ko_wiki_v1_squad.json
- 
- ┣ 📂result_v2
- 
- ┃ ┣ 📜config.json
- 
- ┃ ┣ 📜pytorch_model.bin
- 
- ┃ ┣ 📜special_tokens_map.json
- 
- ┃ ┣ 📜tokenizer_config.json
- 
- ┃ ┣ 📜training_args.bin
- 
- ┃ ┗ 📜vocab.txt
- 
- ┣ 📂static
- 
- ┃ ┣ 📜funct.js
- 
- ┃ ┗ 📜mystyle.css
- 
- ┣ 📂templates
- 
- ┃ ┗ 📜index.html
- 
- ┣ 📜app.py
- 
- ┣ 📜app2.py
- 
- ┗ 📜requirements.txt
+```
+.
+wiki_chatbot
+ ┣ dataset
+ ┃ ┣ dev
+ ┃ ┃ ┗ KorQuAD_v1.0_dev.json
+ ┃ ┗ train
+ ┃ ┃ ┣ KorQuAD_v1.0_train.json
+ ┃ ┃ ┗ ko_wiki_v1_squad.json
+ ┣ result_v2
+ ┃ ┣ config.json
+ ┃ ┣ pytorch_model.bin
+ ┃ ┣ special_tokens_map.json
+ ┃ ┣ tokenizer_config.json
+ ┃ ┣ training_args.bin
+ ┃ ┗ vocab.txt
+ ┣ static
+ ┃ ┣ funct.js
+ ┃ ┗ mystyle.css
+ ┣ templates
+ ┃ ┗ index.html
+ ┣ app.py
+ ┣ app2.py
+requirements.txt
+```
 
 <br>
 <br>
