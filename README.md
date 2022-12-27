@@ -12,9 +12,12 @@
 
 > BERT 모델을 사용하여 QA Task를 진행하도록 하였고, Wikipedia API를 이용하여 질문에 대한 context를 불러왔습니다.
 
+<br>
+<br>
 
-<br>
-<br>
+※  https://github.com/JoungheeKim/korean-question-answer-system 에서 프로젝트 진행 방법에 대한 도움을 받았습니다.  ※
+
+
 <br>
 <br>
 
@@ -77,6 +80,7 @@ pip install -r requirements.txt
 
 ## 파일 구조
 
+
 📦wiki_chatbot
 
  ┣ 📂dataset
@@ -119,15 +123,96 @@ pip install -r requirements.txt
 
 <br>
 <br>
+
 - app.py : 유니티와 연동할 때  파일입니다.
 
 - app2.py : 데모사이트로 확인을 하고자 할 때 연결하는 파일입니다.
 
-- dataset : KorQuAD v 1.0과 AiHub의 질의응답 데이터셋을 이용하였습니다.
+- dataset : 학습에 사용된 데이터셋. KorQuAD v 1.0과 AiHub의 질의응답 데이터셋을 이용하였습니다.
 
-- model : 위에 언급된 dataset을 훈련시켜 만들었습니다. (epoch : 4, batch size : 32) <br>         
-        만약 custom한 모델을 이용해보고 싶다면 result_v2 파일에 개인 model을 추가하시면 됩니다. 
+- result_v2 : output_dir 이름
 
+<br>
+<br>
+
+## 모델 학습 및 평가방법
+
+[BERT](https://github.com/JoungheeKim/korean-question-answer-system), [KoBERT](https://github.com/monologg/KoBERT-KorQuAD) 학습 방법을 참고하였습니다.
+
+<br>
+
+1. 학습 방법
+
+```sh
+python run_korquad.py --model_type hanbert --model_name_or_path HanBert-54kN-torch --output_dir result/ --do_train --train_dir resource/korquad2/train/ --gradient_accumulation_steps 4 --max_seq_length 512 --logging_steps 5000 --save_steps 5000 --num_train_epochs 1 --dataset_type korquad2 --version_2_with_negative
+```
+<br>
+
+2. 평가 명령어
+
+```sh
+python run_korquad.py --model_type hanbert --model_name_or_path aihub/ --output_dir result/ --do_eval --predict_dir resource/korquad2/dev/ --max_seq_length 512 --dataset_type korquad2 --version_2_with_negative
+```
+
+<br>
+
+- options
+
+  - model_type : 모델타입(bert, kobert, hanbert) 선택
+
+  - model_name_or_path : 모델타입에 따라 선택(bert : bert-base-multilingual-cased, kobert : monologg/kobert, habert : HanBert-54kN-torch)하거나 모델이 있는 폴더 설정
+
+  - output_dir : 학습 또는 평가 결과를 저장할 폴더
+
+  - do_train : 학습 할 때 설정하는 옵션(true/false)
+
+  - train_dir : 학습에 필요한 파일(.json)이 있는 폴더
+
+  - do_eval : 평가 할 때 설정하는 옵션(true/false)
+
+  - predict_dir : 평가에 필요한 파일(.json)이 있는 폴더
+
+  - dataset_type : korquad1.0 또는 aibhub 데이터(.json)을 학습할 때는 korquad1, korquad2.0 을 학습할 때는 korquad2로 설정
+  
+  <br>
+  
+- 프로젝트 파라미터
+  
+   - model_type : bert
+  
+   - model_name_or_path : bert-base-multilingual-cased
+  
+   - output_dir : {본인이 원하는 디렉토리 경로}
+  
+   - do_train : true
+  
+   - train_dir : {train시킬 데이터셋 경로}
+  
+   - do_eval : true
+  
+   - predict_dir : {평가할 때 사용할 데이터셋 경로}
+  
+   - dataset_type : korquad1
+ <br>
+ 
+[korean-question-answer-system](https://github.com/JoungheeKim/korean-question-answer-system) 페이지를 git clone하여 위의 훈련 방법을 진행하면 output_dir에 훈련된 model이 생성됩니다.
+
+- 만약 본인이 custom한 model을 통해 프로젝트를 진행하고 싶으면, app.py과 app2.py에서 file_dir를 본인의 model이 있는 경로로 설정해주면 됩니다.
+  
+  (현재 result_v2로 설정되어 있습니다)
+
+
+ 
+ <br>
+ <br>
+
+### 모델 다운로드
+
+만약 모델을 학습시킬 수 없는 환경이라면 해당 드라이브에서 모델을 다운받을 수 있습니다.
+
+다운을 받은 후 output_dir의 경로를 맞춰주시면 정상적으로 작동함을 알 수 있습니다.
+
+:::: [모델 다운로드] 모델 링크 걸어놓기 ::::
 
 <br>
 <br>
@@ -172,9 +257,7 @@ Response
 { "answer" : "조각류, 갑각류" }
 ```
 
-- 예시
 
-![unityWiki](https://user-images.githubusercontent.com/104834390/209521725-4b2b6580-1801-4eec-8b68-1bc1b66f0071.png)
 
 
 ### /answer_2 [POST]
