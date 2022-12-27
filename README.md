@@ -217,6 +217,7 @@ python run_korquad.py --model_type hanbert --model_name_or_path aihub/ --output_
 <br>
 epoch 4, batch size : 32로 학습을 진행하였습니다.
 
+pytorch_model.bin 파일을 다운받으시면 되나, 만약 이 파일만을 다운받고 실행했을 때 오류가 난다면 나머지 파일도 받아주십시오.
 <br>
 <br>
 <br>
