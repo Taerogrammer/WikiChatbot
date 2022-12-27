@@ -191,6 +191,15 @@ python run_korquad.py --model_type hanbert --model_name_or_path aihub/ --output_
  
  <br>
  <br>
+ 
+### 데이터셋
+
+- 데이터셋은 [KorQuAD v1.0](https://korquad.github.io/KorQuad%201.0/)과 [aihub](https://aihub.or.kr/)의 질의응답 데이터셋을 통해 훈련하였습니다.
+
+  파일의 크기 이슈로 해당 사이트에서 데이터셋들을 다운 받은 후 디렉토리 구조에 맞춰주시면 정상적으로 작동합니다.
+ 
+ <br>
+ <br>
 
 ### 모델 다운로드
 
